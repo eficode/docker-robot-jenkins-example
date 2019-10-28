@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  frontend:
+    image: tutum/hello-world
+    ports:
+      - 8000:80
+  
+  robot:
+    build: robot
+    command: /robot/run_tests.sh
+    environment:
+      BROWSER: HeadlessChrome
+      SERVER: http://frontend
+    volumes:
+      - ./robot/:/robot/
+      - ./results/:/results/
+    depends_on:
+      - frontend
