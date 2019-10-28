@@ -24,7 +24,7 @@ pipeline {
             disableArchiveOutput: false,
             logFileName: 'results/log.html',
             onlyCritical: true,
-            otherFiles: 'results/selenium*.png',
+            otherFiles: 'results/*.png',
             outputFileName: 'results/output.xml',
             outputPath: '.',
             passThreshold: 90,

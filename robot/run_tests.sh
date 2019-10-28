@@ -6,7 +6,6 @@
 # wget --spider -q -T 90 $RESET_DB
 
 echo "Executing tests"
-
 pabot --processes 3 --outputdir ./results ./robot/tests/
 
 if [ $? -eq 0 ]
@@ -32,7 +31,6 @@ do
   pabot --processes 3 --rerunfailed ./results/output.xml --outputdir ./results --output rerun.xml ./robot/tests/  
 
   echo "Merging results"
-
   rebot --outputdir ./results --output output.xml --merge ./results/output.xml ./results/rerun.xml
 
   if [ $? -eq 0 ]
