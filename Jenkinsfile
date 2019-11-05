@@ -12,7 +12,7 @@ pipeline {
 
     stage('Robot tests') {
       steps {
-        sh """sh docker-compose run robot"""
+        sh "docker-compose run robot"
       }
     }
 
